@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentTransaction transition;
     MainFragment main;
     ShoppingFragment shopping;
+    InboxFragment inbox;
+    ProfileFragment profile;
+    VideogamesFragment videogames;
     AboutFragment about;
 
     @Override
@@ -36,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         main = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.mainFragment);
         shopping = (ShoppingFragment) getSupportFragmentManager().findFragmentById(R.id.shoppingFragment);
+        inbox = (InboxFragment) getSupportFragmentManager().findFragmentById(R.id.inboxFragment);
+        profile = (ProfileFragment) getSupportFragmentManager().findFragmentById(R.id.profileFragment);
+        videogames = (VideogamesFragment) getSupportFragmentManager().findFragmentById(R.id.videogamesFragment);
         about = (AboutFragment) getSupportFragmentManager().findFragmentById(R.id.aboutFragment);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -51,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction transition = getSupportFragmentManager().beginTransaction();
         transition.show(main);
         transition.hide(shopping);
+        transition.hide(inbox);
+        transition.hide(profile);
+        transition.hide(videogames);
         transition.hide(about);
         transition.commit();
     }
@@ -63,6 +72,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+    public void botonClicked(View v){
+        transition = getSupportFragmentManager().beginTransaction();
+        transition.show(about);
+        transition.hide(main);
+        transition.hide(shopping);
+        transition.hide(inbox);
+        transition.hide(profile);
+        transition.hide(videogames);
+        transition.commit();
     }
 
     @Override
@@ -81,6 +100,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             transition.show(about);
             transition.hide(main);
             transition.hide(shopping);
+            transition.hide(inbox);
+            transition.hide(profile);
+            transition.hide(videogames);
             transition.commit();
         }
         return super.onOptionsItemSelected(item);
@@ -96,14 +118,38 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             transition = getSupportFragmentManager().beginTransaction();
             transition.show(shopping);
             transition.hide(main);
+            transition.hide(inbox);
+            transition.hide(profile);
+            transition.hide(videogames);
             transition.hide(about);
             transition.commit();
         } else if (id == R.id.nav_inbox) {
-
+            transition = getSupportFragmentManager().beginTransaction();
+            transition.show(inbox);
+            transition.hide(main);
+            transition.hide(shopping);
+            transition.hide(profile);
+            transition.hide(videogames);
+            transition.hide(about);
+            transition.commit();
         } else if (id == R.id.nav_profile) {
-
+            transition = getSupportFragmentManager().beginTransaction();
+            transition.show(profile);
+            transition.hide(main);
+            transition.hide(shopping);
+            transition.hide(inbox);
+            transition.hide(videogames);
+            transition.hide(about);
+            transition.commit();
         } else if (id == R.id.nav_videogames) {
-
+            transition = getSupportFragmentManager().beginTransaction();
+            transition.show(videogames);
+            transition.hide(main);
+            transition.hide(inbox);
+            transition.hide(shopping);
+            transition.hide(profile);
+            transition.hide(about);
+            transition.commit();
         } else if (id == R.id.nav_sell) {
 
         } else if (id == R.id.nav_transactions) {

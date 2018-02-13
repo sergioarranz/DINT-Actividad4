@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class MainFragment extends Fragment {
 
     private TextView tvMainTitle;
@@ -24,7 +21,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
 
-        tvMainTitle = v.findViewById(R.id.tvAboutTitle);
+        tvMainTitle = v.findViewById(R.id.tvMainTitle);
         tvMainTitle.setText(R.string.title_main_fragment);
 
         return v;

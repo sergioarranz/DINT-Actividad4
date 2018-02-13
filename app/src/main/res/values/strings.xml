@@ -1,14 +1,17 @@
 <resources>
     <string name="app_name">DINT Actividad4</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_about">Sobre nosotros</string>
+    <string name="navigation_drawer_open">Abrir menú navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú navegación</string>
+    <string name="action_about">Información</string>
     <string name="title_main_fragment">FRAGMENT PRINCIPAL</string>
     <string name="title_about_fragment">Información de nuestra app</string>
     <string name="title_shopping_fragment">FRAGMENTO CARRITO</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_inbox_fragment">FRAGMENTO MENSAJES/NOTIFICACIONES</string>
+    <string name="title_profile_fragment">FRAGMENTO PERFIL</string>
+    <string name="title_videogames_fragment">FRAGMENTO VIDEOJUEGOS</string>
+    <string name="title_nav_header_name">Sergio Arranz</string>
+    <string name="title_nav_header_email">sergioas1996@gmail.com</string>
+    <string name="btnActividad4_main_fragment">PARTE 1 ACTIVIDAD 4</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
