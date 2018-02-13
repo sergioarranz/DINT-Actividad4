@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -13,17 +14,21 @@ import android.view.ViewGroup;
  */
 public class ShoppingFragment extends Fragment {
 
+    private TextView tvShoppingTitle;
 
     public ShoppingFragment() {
-        // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shopping, container, false);
+
+        View v = inflater.inflate(R.layout.fragment_shopping, container, false);
+
+        tvShoppingTitle = v.findViewById(R.id.tvShoppingTitle);
+        tvShoppingTitle.setText(R.string.title_shopping_fragment);
+
+        return v;
     }
 
 }

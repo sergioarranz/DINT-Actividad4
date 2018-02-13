@@ -14,7 +14,7 @@ import android.widget.TextView;
  */
 public class AboutFragment extends Fragment {
 
-    private TextView tvTitle;
+    private TextView tvAboutTitle;
 
     public AboutFragment() {
     }
@@ -24,8 +24,8 @@ public class AboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_about, container, false);
 
-        tvTitle = v.findViewById(R.id.tvTitle);
-        tvTitle.setText(R.string.title_about_fragment);
+        tvAboutTitle = v.findViewById(R.id.tvAboutTitle);
+        tvAboutTitle.setText(R.string.title_about_fragment);
 
         return v;
     }

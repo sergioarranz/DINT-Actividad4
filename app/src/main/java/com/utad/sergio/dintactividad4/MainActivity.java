@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     MainActivityEvents events;
     FragmentTransaction transition;
+    MainFragment main;
     ShoppingFragment shopping;
     AboutFragment about;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(events);
 
+        main = (MainFragment) getSupportFragmentManager().findFragmentById(R.id.mainFragment);
         shopping = (ShoppingFragment) getSupportFragmentManager().findFragmentById(R.id.shoppingFragment);
         about = (AboutFragment) getSupportFragmentManager().findFragmentById(R.id.aboutFragment);
 
@@ -47,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setItemIconTintList(null);
 
         FragmentTransaction transition = getSupportFragmentManager().beginTransaction();
-        transition.show(shopping);
+        transition.show(main);
+        transition.hide(shopping);
         transition.hide(about);
         transition.commit();
     }
@@ -76,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.action_about) {
             transition = getSupportFragmentManager().beginTransaction();
             transition.show(about);
+            transition.hide(main);
             transition.hide(shopping);
             transition.commit();
         }
@@ -88,17 +92,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_shopping) {
+            transition = getSupportFragmentManager().beginTransaction();
+            transition.show(shopping);
+            transition.hide(main);
+            transition.hide(about);
+            transition.commit();
+        } else if (id == R.id.nav_inbox) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_profile) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_videogames) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_sell) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_transactions) {
 
         }
 
